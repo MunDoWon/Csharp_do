@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace App07
+{
+     class Program
+    {
+        static void Main(string[] args)
+        { 
+            char a = '안';
+            char b = '녕';
+            string str = "안녕";
+
+            Console.WriteLine($"{a}{b}");
+            Console.WriteLine(str);
+
+            string multi01 = "안녕\n하세요";
+            Console.WriteLine(multi01);
+           
+            //Q) 다음과 같이 표현해 주세요 char '반' '가' '워' string "행복하세요!!!"
+
+            char c = '반';
+            char d = '가';
+            char e = '워';
+            Console.WriteLine($"'{c}''{d}''{e}'");
+
+            string happy = "행복\n하세\n요!!!";
+            Console.WriteLine(happy);
+
+
+        }
+    }
+}
