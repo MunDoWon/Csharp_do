@@ -1,1 +1,2 @@
-# csharptest2
+# csharptest
+C# 공부
