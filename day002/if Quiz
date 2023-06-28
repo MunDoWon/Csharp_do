@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace if_Quiz01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number;
+            number = int.Parse(Console.ReadLine());
+            if (number < 0)
+                Console.WriteLine("음수");
+            else if (number > 0)
+                Console.WriteLine("양수");
+            else
+                Console.WriteLine("0");
+            if (number % 2 == 0)
+                Console.WriteLine("짝수");
+            else
+                Console.WriteLine("홀수");
+           
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ifQuiz_02
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*학점을 출력하는 프로그램을 만들어 봅시다.
+
+                100 ~ 90  A
+                89 ~ 80  B
+                79 ~ 70  C
+                69 ~ 60 D
+                59 이하는 F
+            */
+            int num;
+            num = int.Parse(Console.ReadLine());
+            int a = num / 10;
+            if (a == 10 || a == 9)
+                Console.WriteLine("A");
+            else if (a == 8 )
+                Console.WriteLine("B");
+            else if (a == 7 )
+                Console.WriteLine("C");
+            else if (a == 6 )
+                Console.WriteLine("D");
+            else
+                Console.WriteLine("F");
+        }
+    }
+}
