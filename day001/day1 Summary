@@ -1,0 +1,5 @@
+int long 정수 변수선언 byte 별로 다양함
+double 소수사용 ex) (double)3 , 3.0
+a = int.Parse(Console.ReadLine()); 변수를 입력
+char,string 언어 변수 선언
+char 하나하나 string 문장 ""활용
