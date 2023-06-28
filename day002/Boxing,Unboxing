@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace boxingunboxing
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Boxing, unBoxing
+            int a = 123;
+            object b = (object)a;   //Boxing  힙에 저장
+            int c = (int)b;         //Unboxing   스택에 저장   
+            // 원활한 객체 지정 , 기본값만 가능
+            
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.WriteLine(c);
+
+            double x = 3.141592;
+            object y = x;           // 박싱 힙 저장
+            double z = (double)y;   // 언박싱 스택 저장
+
+            Console.WriteLine(x);                
+            Console.WriteLine(y);
+            Console.WriteLine(z);
+
+        }
+    }
+}
