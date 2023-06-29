@@ -48,3 +48,27 @@ namespace StringApp01
         }
     }
 }
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Stringapp02
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("ABC".ToLower());     //""문자열상수
+            Console.WriteLine("abc".ToUpper());
+
+            Console.WriteLine("Happy friday!".Insert(5, "Sunny"));  //insert 시작,value
+            Console.WriteLine("I Don't love You".Remove(2, 6)); //자리 삭제
+
+            Console.WriteLine("      ABC      ");
+            Console.WriteLine("      ABC      ".Trim()); //공백삭제
+        }
+    }
+}
