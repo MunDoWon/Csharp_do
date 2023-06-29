@@ -1,0 +1,30 @@
+3일차
+while test : for문과 while문 문제를통해 복습
+CTS: 시스템 형식 지정
+
+StringApp01: string과 IndexOf ,LastIndexOf 배열과 관련됨 string은 문자열
+IndexOf() 는 Console.WriteLine후에서 특정문자의 위치좌표를 출력 
+LastIndexOf() 는 내에서 문자의 마지막 좌표 출력
+StartWith() 이걸로 시작하니? bool형식으로 출력
+EndWith() 이걸로 끝나니? bool형식으로 출력
+Contains() 이거 있니? bool형식으로 출력
+Replace() 이거 이걸로 바꿔, 지정 문자열들을 변환
+
+Stringapp02
+string형식의 문자열 변형기능
+ToLower() 대문자를 소문자로
+ToUpper() 소문자를 대문자로
+Insert() 시작자리에 value삽입
+Remove() 자리 삭제
+Trim() 공백 삭제
+
+Star Quiz 
+for문과 if문을 활용해서 다양한 형태의 문자열 제작
+
+Switch
+Switch 키워드로 시작 조건식을 입력받고 Switch레이블안에 패턴과 일치하는지 검사하고 case코드를 실행 
+break로 절을 끊어 준다.
+
+Array 배열
+Array는 많은 변수 선언에 탁월
+데이터 형식[] 배열이름= new데이터형식[용량] 이는 메모리에 할당,0부터 시작
