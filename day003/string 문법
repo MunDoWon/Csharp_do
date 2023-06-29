@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+//using static System.Console
+
+namespace StringApp01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string greeting = "Good Morning";
+
+            Console.WriteLine(greeting);    
+            Console.WriteLine();
+
+            //IndexOf 문자위치 좌표
+            Console.WriteLine($"{greeting.IndexOf("Morning")}");
+            Console.WriteLine($"{greeting.IndexOf("d")}");
+
+            //LastIndexOf() 마지막 문자위치 좌표
+            Console.WriteLine($"{greeting.LastIndexOf("Good")}");
+            Console.WriteLine($"{greeting.LastIndexOf("o")}");
+
+            //StartWith() 특정문자로 시작하니? bool
+            Console.WriteLine($"StartWith : {greeting.StartsWith("Good")}");
+            Console.WriteLine($"StartWith : {greeting.StartsWith("Morning")}");
+
+            //EndWith() 특정문자로 끝나니? bool
+            Console.WriteLine($"StartWith : {greeting.EndsWith("Good")}");
+            Console.WriteLine($"StartWith : {greeting.EndsWith("Morning")}");
+
+            //Contains() 이거 있나?
+            Console.WriteLine($"Contains Evening : {greeting.Contains("Evening")}");
+            Console.WriteLine($"Contains Morning : {greeting.Contains("Morning")}");
+
+            //Replace() 이거 이걸로 바꿔라
+            Console.WriteLine($"Replace Evening : {greeting.Replace("Morning","Evening")}");
+
+
+
+
+
+
+        }
+    }
+}
