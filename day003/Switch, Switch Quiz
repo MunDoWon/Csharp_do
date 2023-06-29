@@ -1,0 +1,132 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SwitchCaseApp001
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = 1;
+
+            switch (num)
+            {
+                case 1:
+                    Console.WriteLine("1이 출력되었습니다.");
+                    break;
+                case 2:
+                    Console.WriteLine("2이 출력되었습니다.");
+                    break;
+                default:
+                    Console.WriteLine("기본값이 출력되었습니다.");
+                    break;
+
+            }
+
+            string num1 = "월";
+
+            switch (num1)
+            {
+                case "월":
+                    Console.WriteLine("월요일이 출력되었습니다.");
+                    break;
+                case "화":
+                    Console.WriteLine("화요일이 출력되었습니다.");
+                    break;
+                default:
+                    Console.WriteLine("기본값이 출력되었습니다.");
+                    break;
+            }
+
+            //사용자에게 1~7 사이의 숫자를 입력받고 숫자에 따라 요일을 출력하는 프로그램을 작성해주세요
+
+            int num2;
+            num2 = int.Parse(Console.ReadLine());
+
+            switch (num)
+            {
+                case 0:
+                    Console.WriteLine($"숫자를 입력해 주세요 : {num}\n일요일 입니다.");
+                    break;
+                case 1:
+                    Console.WriteLine($"숫자를 입력해 주세요 : {num}\n월요일 입니다.");
+                    break;
+                case 2:
+                    Console.WriteLine($"숫자를 입력해 주세요 : {num}\n화요일 입니다.");
+                    break;
+                case 3:
+                    Console.WriteLine($"숫자를 입력해 주세요 : {num}\n수요일 입니다.");
+                    break;
+                case 4:
+                    Console.WriteLine($"숫자를 입력해 주세요 : {num}\n목요일 입니다.");
+                    break;
+                case 5:
+                    Console.WriteLine($"숫자를 입력해 주세요 : {num}\n금요일 입니다.");
+                    break;
+                case 6:
+                    Console.WriteLine($"숫자를 입력해 주세요 : {num}\n토요일 입니다.");
+                    break;
+                default:
+                    Console.WriteLine($"0~6을 입력해 주세요");
+                    break;
+
+            }
+
+
+
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SwitchQuiz01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //단을 입력하세요
+                      
+            Console.Write("단을 입력하세요 : ");
+
+            int num = int.Parse(Console.ReadLine());
+
+            switch (num)
+            {
+                case 3:
+                    for (int i = 1; i < 10; i++)
+                    {
+                        Console.WriteLine($"{num} * {i} = {num * i}");
+                    }
+                    break;
+                case 4:
+                    for (int i = 1; i < 10; i++)
+                    {
+                        Console.WriteLine($"{num} * {i} = {num * i}");
+                    }
+                    break;
+                case 5:
+                    for (int i = 1; i < 10; i++)
+                    {
+                        Console.WriteLine($"{num} * {i} = {num * i}");
+                    }
+                    break;
+                case 6:
+                    for (int i = 1; i < 10; i++)
+                    {
+                        Console.WriteLine($"{num} * {i} = {num * i}");
+                    }
+                    break;
+            }
+        }
+    }
+}
