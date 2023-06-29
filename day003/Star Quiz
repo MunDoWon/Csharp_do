@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Quiz_star
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // 1
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= i; j++) //변수적용
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            // 2
+            for (int i = 5; i > 0; i--)
+            {
+                for (int j = i; j > 0; j--)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            // 3
+            int n = 5;
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= n - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 1; k <= i; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            // 4
+            int n = 5;
+            for (int i = 0; i <= n; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 0; k < n - i; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
+            // 5
+            int n = 5;
+            int space = 2;
+            int star = 1;
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= space; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 1; k <= star; k++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
+
+                if (i < 3)
+                {
+                    space--;
+                    star += 2;
+                }
+                else
+                {
+                    space++;
+                    star -= 2;
+                }
+            }
+
+
+
+
+        }
+    }
+}
