@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lottogenerate
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //중복 가능 번호 6개와 보너스 번호 출력
+            Random r = new Random();
+            int[] lottoNumbers = new int[6];
+
+            for (int i = 0; i < 6; i++)
+            {
+                lottoNumbers[i] = r.Next(1, 46);
+            }
+
+            int bonusNumber = r.Next(1, 46);
+
+            Console.WriteLine($"로또 번호: {string.Join(",", lottoNumbers)}");
+            Console.WriteLine($"보너스 번호: {bonusNumber}");
+
+            //중복 불가능, 번호 정렬
+        }
+    }
+}
