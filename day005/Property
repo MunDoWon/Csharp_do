@@ -1,0 +1,107 @@
+using System;
+
+namespace PropertyApp01
+{
+    class Cat
+    {
+        private string name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        private int age;
+        public int Age
+        {
+            get;
+            set;
+        }
+        private string color;
+        public string Color { get; set; }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat nero = new Cat();
+            nero.Name = "네로";
+            nero.Age = 10;
+            nero.Color = "검은색";
+            Console.WriteLine($"이름 :{nero.Name} 나이: {nero.Age} 색: {nero.Color}");
+        }
+    }
+}
+
+using System;
+
+namespace ProportyApp02
+{
+    class Cat
+    {
+        public string name { get; set; }
+        public int age { get; set; }
+        public string color { get; set; }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat nero = new Cat();
+            nero.name = "네로";
+            nero.age = 10;
+            nero.color = "검은색";
+            Console.WriteLine(nero.name + nero.age + nero.color);
+        }
+    }
+}
+
+using System;
+
+namespace PropertyApp03
+{
+    class BrithdayInfo
+    {
+        private string name;
+        private DateTime birthday;
+
+        //property
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public DateTime Birthday
+        {
+            get { return birthday; }
+            set { birthday = value; }
+        }
+        public int Age
+        {
+            get
+            {
+                return new DateTime(DateTime.Now.Subtract(birthday).Ticks).Year;
+            }
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            BrithdayInfo birth = new BrithdayInfo();
+            birth.Name = "서현";
+            birth.Birthday = new DateTime(1991, 6, 28);
+
+            Console.WriteLine($"Name : {birth.Name}");
+            Console.WriteLine($"Birthday : {birth.Birthday.ToShortDateString()}");
+            Console.WriteLine($"Age : {birth.Age}");
+        }
+    }
+}
+
