@@ -1,0 +1,76 @@
+using System;
+
+namespace OOPApp01
+{
+    class Cat
+    {
+        //필드, 멤버변수
+        public string Name;
+        public string Color;
+
+        public void Meow()
+        {
+            Console.WriteLine($"{Color} {Name} : 야옹~");
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat tom = new Cat();        //객체생성
+            tom.Name = "톰";
+            tom.Color = "회색";
+            Console.WriteLine($"{tom.Name}  {tom.Color}");
+
+            Cat nero = new Cat();
+            nero.Name = "네로";
+            nero.Color = "검은색";
+            nero.Meow();
+        }
+    }
+}
+
+using System;
+
+namespace OOPApp03
+{
+    class Cat
+    {
+        //이름
+        public string Name;
+        //색깔
+        public string Color;
+        //나이
+        public int Age;
+
+        //생성자
+        public Cat()            //default 생성자
+        {
+            //초기값
+            this.Name = "야옹이";
+            this.Age = 2;
+            this.Color = "누런색";
+        }
+        //메소드 야옹
+        public void Meow()
+        {
+            Console.WriteLine($"{Age}살 {Color} {Name}는 야옹~");
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat yuumi = new Cat();      //객체생성
+            //생성 후 초기화
+            yuumi.Name = "유미";
+            yuumi.Age = 3;
+            yuumi.Color = "흰색";
+            yuumi.Meow();          //출력
+            Console.WriteLine($"유미는 {yuumi.Name} {yuumi.Age}살이야~");
+        }
+    }
+}
+
