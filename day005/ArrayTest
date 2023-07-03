@@ -1,0 +1,73 @@
+using System;
+
+namespace ArrayTest001
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //1~10까지 들어있는 정수형 배열 arr을 선언해 주세요.
+            int[] arr = new int[10];    //배열선언
+            //입력
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = i + 1;       //배열은 선형적 메모리다
+                Console.WriteLine(arr[i]);
+            }
+
+        }
+    }
+}
+
+using System;
+
+namespace ArrayTest02
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //1~10까지 배열에 홀수만 입력되는 5크기의 arr배열을 만드세요
+            int[] arr = new int[5];
+            for (int i = 0, cnt = 1; i < arr.Length; i++, cnt += 2)
+            {
+                arr[i] = cnt;
+                Console.WriteLine(arr[i]);
+            }
+
+            int[] arr = new int[5];
+            int number = 1;  // 1부터 시작하는 홀수
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (number % 2 != 0)  // 홀수인 경우에만 배열에 저장
+                {
+                    arr[i] = number;
+                    i++;  // 홀수가 저장되었으므로 배열 인덱스를 1 증가시킴
+                }
+                number += 1;  // 다음 숫자로 이동
+            }
+
+            //1~10까지 정수가 담긴배열 arr, 짝수만 출력
+            int[] arr = new int[10];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = i + 1;
+                if (arr[i] % 2 == 0)
+                {
+                    Console.WriteLine(arr[i]);
+                }
+            }
+
+            //홀수로
+            int[] arr = new int[10];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = i;
+                if (arr[i] % 2 != 0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+    }
+}
