@@ -74,3 +74,47 @@ namespace OOPApp03
     }
 }
 
+using System;
+
+namespace OOPApp04
+{
+    class Cat
+    {
+        //p.246
+        //public string Name;
+        //public string Color;
+        public Cat() //생성자
+        {
+            Name = "";
+            Color = "";
+        }
+        //인자가 있는 생성자
+        public Cat(string _Name, string _Color)
+        {
+            Name = _Name;
+            Color = _Color;
+        }
+        //멤버변수
+        public string Name;
+        public string Color;
+        public void Meow()
+        {
+            Console.WriteLine($"{Name} : 야옹");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat yuumi = new Cat("키티", "하얀색");      //골라서 불러올수 있다("키티","하얀색") 인자로 호출,비우면 defult         
+            yuumi.Meow();
+            Console.WriteLine(yuumi.Name + yuumi.Color);
+
+            Cat nero = new Cat("네로", "검은색");
+            nero.Meow();
+            Console.WriteLine(nero.Name + nero.Color);
+        }
+    }
+}
+
+
