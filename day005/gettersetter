@@ -1,0 +1,88 @@
+using System;
+
+namespace ZooApp
+{
+    class Tiger
+    {
+        private string name;
+        private int Age;
+        public Tiger(string _name)  //생성자에서 만듦
+        {
+            name = _name;
+        }
+        //Getter, Setter
+        public void setAge(int _age)
+        {
+            this.Age = _age;
+        }
+        public int getAge()
+        {
+            return Age;
+        }
+
+        public string getName()     //private에 있는 이름을 get으로 불러들임
+        {
+            return name;
+        }
+    }
+
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Tiger timon = new Tiger("티몬");
+            timon.setAge(5);
+
+            Console.WriteLine($"고양이의 이름은 {timon.getName()}"); //name 생성자가 private에 있어서 get으로 불러줌
+            Console.WriteLine($"티몬의 나이는 {timon.getAge()}");
+        }
+    }
+}
+
+using System;
+
+namespace GetterSetterQuiz01
+{
+    class Cat
+    {
+        private string name;
+        private string color;
+        private int age;
+        public void setName(string _name)       //set은 void로 
+        {
+            this.name = _name;      //this 생략가능
+        }
+        public string getName()
+        {
+            return name;
+        }
+        public void setAge(int _age)
+        {
+            age = _age;
+        }
+        public int getAge()
+        {
+            return age;
+        }
+        public void setColor(string _color)
+        {
+            color = _color;
+        }
+        public string getColor()
+        {
+            return color;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat nero = new Cat();
+            nero.setName("네로");
+            nero.setAge(10);
+            nero.setColor("검은색");
+            Console.WriteLine($"이름: {nero.getName()} 색깔: {nero.getColor()} 나이: {nero.getAge()}");
+        }
+    }
+}
