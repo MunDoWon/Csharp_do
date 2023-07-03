@@ -1,0 +1,67 @@
+using System;
+
+namespace MethodTest01
+{
+    internal class Program
+    {
+        static void hello() //static 메모리가 할당 되었다
+        {
+            Console.WriteLine("Hello World");
+        }
+        int Plus(int n1, int n2)
+        {
+            return n1 + n2;
+        }
+
+        //국영수 평균계산기
+        double Avg(int kor, int eng, int math)
+        {
+            return (double)(kor + eng + math) / 3.0;
+        }
+        static void Main(string[] args)
+        {
+            //non static
+            Program p = new Program();
+            p.hello();
+
+            //static
+            hello();
+
+            //nonstatic
+            Program p = new Program();
+            Console.WriteLine(p.Plus(1, 2));
+
+            //국영수 평균 계산기
+            int kor, eng, math;
+
+            kor = int.Parse(Console.ReadLine());
+            eng = int.Parse(Console.ReadLine());
+            math = int.Parse(Console.ReadLine());
+
+            Program p = new Program();
+            double result = p.Avg(kor, eng, math);
+            Console.WriteLine(result);
+
+            int[] score = new int[3];
+            {
+                for (int i = 0; i < score.Length; i++)
+                {
+                    score[i] = int.Parse(Console.ReadLine());
+                }
+                Program p2 = new Program();
+                double result2 = p2.Avg(score[0], score[1], score[2]);
+                Console.WriteLine(result2);
+            }
+
+            //static
+            int kor, eng, math;
+
+            kor = int.Parse(Console.ReadLine());
+            eng = int.Parse(Console.ReadLine());
+            math = int.Parse(Console.ReadLine());
+            Console.WriteLine(Avg(kor, eng, math));
+
+        }
+
+    }
+}
