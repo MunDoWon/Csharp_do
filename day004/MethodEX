@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MethodEX01
+{
+    internal class Program
+    {
+        static double Square(double arg)
+        {
+            return arg * arg;
+        }
+        static void Main(string[] args)
+        {
+            //다음코드에서 Square()메소드를 구현해 프로그램을 완성하라
+            Console.Write("수를 입력하세요. : ");
+            string input = Console.ReadLine();
+            double arg = Convert.ToDouble(input);
+
+            Console.WriteLine("결과 : {0}", Square(arg));
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MethodEX02
+{
+    class MianApp
+    {
+
+        //다음 코드에서 Mean() 메소드를 실행하면 0인데 이 원인과 수정을 하세요
+        //mean의 매개변수를 호출로 불렀기 때문에 Mean의 값이 변하지 않는다 ref를 이용해 참조가 되게 호출한다
+
+        public static void Main()
+        {
+            double mean = 0;
+
+            Mean(1, 2, 3, 4, 5, ref mean);
+            Console.WriteLine("평균 : {0}", mean);
+        }
+        public static void Mean(double a, double b, double c, double d, double e, ref double mean)
+        {
+            mean = (a + b + c + d + e) / 5;
+        }
+
+
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MethodApp03
+{
+    internal class Program
+    {
+        static int plus (int a,int b,int c,int d) { return  a + b + c + d; }
+        static void Main(string[] args)
+        {
+            
+            Console.Clear();
+            string[] input = Console.ReadLine().Split(' ');
+
+            int a = int.Parse(input[0]);
+            int b = int.Parse(input[1]);
+            int c = int.Parse(input[2]);
+            int d = int.Parse(input[3]);
+
+            
+            Console.WriteLine(plus(a,b,c,d));
+        }
+    }
+}
+
