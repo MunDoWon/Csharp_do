@@ -1,0 +1,36 @@
+using System;
+
+namespace OOPApp13
+{
+    //p.254
+    class Myclass
+    {
+        public int MyField1;
+        public int MyField2;
+        //깊은 복사
+        public Myclass DeepCopy()
+        {
+            Myclass newCopy = new Myclass();        //공간을 새로 만들어서 복사
+            newCopy.MyField1 = this.MyField1;
+            newCopy.MyField2 = this.MyField2;
+            return newCopy;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Myclass source = new Myclass();
+            source.MyField1 = 10;
+            source.MyField2 = 20;
+
+            //객체생성? 일반적으로 new를 통해서
+            Myclass target = source;        //얕은 복사,참조(주소)를복사
+            Myclass target = source.DeepCopy();
+
+            target.MyField2 = 30;
+            Console.WriteLine(source.MyField1 + " : " + source.MyField2);
+            Console.WriteLine(target.MyField1 + " : " + target.MyField2);
+        }
+    }
+}
