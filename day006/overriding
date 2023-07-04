@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OOPApp07
+{
+    class Car
+    {
+        public virtual void Run()       //virtual 밑에서 재정의 해야하는 함수
+        {
+            Console.WriteLine("차가 달리다.");
+        }
+    }
+    class SuperCar : Car 
+    {
+        public override void Run()      //필히 오버라이드를 해라, 오버라이드 명시적
+        {
+            Console.WriteLine("수퍼카가 달리다.");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Car car = new Car();
+            car.Run();
+            SuperCar supercar = new SuperCar();
+            supercar .Run();
+
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OOPApp06
+{
+    //상속 = 완벽한 복사
+    class Car
+    {
+        public string name;
+        protected int speed;        // 자식계열한테만 물려준다
+        private string brand;       //가져오는데 가려져서 안보인다
+        public void Run()
+        {
+            Console.WriteLine("차가 달리다");
+        }
+    }
+    class SuperCar : Car
+    {
+        public SuperCar() 
+        {
+            this.speed = 100;
+            
+
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            SuperCar sc = new SuperCar();
+            sc.Run();
+            sc.name = "자동차";
+            sc.speed()
+                sc.brand
+        }
+    }
+}
