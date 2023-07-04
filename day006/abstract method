@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OOPApp10
+{
+    class Shape
+    {
+        public virtual void Draw()
+        {
+            Console.WriteLine("도형을 그리다.");
+        }
+    }
+    class Triangle : Shape
+    {
+        public override void Draw()
+        {
+            Console.WriteLine("삼각형을 그리다");
+        }
+    }
+
+    abstract class Shape
+    {
+        public abstract void Draw();     //추상메소드,구현되지않음   //abstract메소드를 만들려면 클래스도 abstract가 되야한다.
+    }
+    class Triangle : Shape          //alt 엔터, 추상클래스 구현
+    {
+        public override void Draw()
+        {
+            //throw new NotImplementedException();
+            Console.WriteLine("삼각형을 그리다.");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Shape shape = new Shape();
+            shape.Draw();
+            Triangle t1 = new Triangle();
+            t1.Draw();
+
+            Console.WriteLine();
+
+            Shape t2 = new Triangle();      //오버라이징 하면 자식 클래스로 출력
+            t2.Draw();
+
+            Shape shape = new Triangle();
+            shape.Draw();
+            Triangle triangle = new Triangle();
+            triangle.Draw();
+        }
+    }
+}
