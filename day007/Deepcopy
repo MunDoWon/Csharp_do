@@ -1,0 +1,38 @@
+using System;
+
+namespace OOPApp15
+{
+    class Myclass
+    {
+        public int Myfield1;
+        public int Myfield2;
+       
+        public Myclass Deepcopy()
+        {
+            Myclass newcopy = new Myclass();
+            newcopy.Myfield1= this.Myfield1;
+            newcopy.Myfield2= this.Myfield2;
+            return newcopy;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Myclass source = new Myclass();
+            source.Myfield1 = 10;
+            source.Myfield2 = 20;
+
+            //Myclass target = source;        //얕은 복사
+            //target.Myfield1 = 30;
+
+            Myclass target = source.Deepcopy(); //깊은복사
+            target.Myfield1 = 30;
+
+
+            Console.WriteLine($"{source.Myfield1}  {source.Myfield2}");
+            Console.WriteLine($"{target.Myfield1}  {target.Myfield2}");
+
+        }
+    }
+}
