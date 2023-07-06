@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AnonymousType
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var a = new { Name = "홍길동", Age = 123 };        //문자열과 정수를 덧셈으로 붙이면 둘다 문자가 됨
+            Console.WriteLine(a.Name+ " " + a.Age);
+
+            var b = new { Subject = "수학", Scoores = new int[] { 1, 2, 3, 4, 5 } };
+        }
+    }
+}
