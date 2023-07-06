@@ -1,0 +1,160 @@
+interface ILooger           //인터페이스가 정의는 하지만 구현내용이 없다.
+                           //구현내용에 인터페이스를 구현해야하며 이를 재정의라한다.
+{
+    void WriteLog(string message);      //인터페이스는 구현하지 않는다 {}를 쓰지 않음,
+}
+class ConsoleLogger : ILooger
+{
+    public void WriteLog(string message)
+    {
+        Console.WriteLine(DateTime.Now.ToLocalTime() + " : " + message);
+    }
+}
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        ConsoleLogger console = new ConsoleLogger();
+        console.WriteLog("입력받았습니다.");
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace InterfaceApp06
+{//p.319
+    interface ILogger
+    {
+        void WriteLog(string message);
+    }
+    class ConsoleLogger { }     //방법1
+    class FileLogger : ILogger      //방법2
+    {
+        private StreamWriter writer;
+        //생성자
+        public FileLogger(string path)
+        {
+            writer = File.CreateText(path);
+            writer.AutoFlush = true;
+        }
+        public void WriteLog(string message)
+        {
+            writer.WriteLine(DateTime.Now.ToShortTimeString() + " : " + message);
+        }
+    }
+    class ClimateMonitor        //대상객체
+    {
+        private ILogger logger;
+        public ClimateMonitor(ILogger logger)
+        {
+            this.logger = logger;       //복사해서 받아오는 과정 climatemonitor에서 받아오면
+                                        //아래서 사라지기 때문에 복사하는 과정 베리어블 라이트 사이드
+        }
+        public void start()         //핵심 메소드
+        {
+            while (true)
+            {
+                Console.Write("온도를 입력해주세요 : ");
+                string temperature = Console.ReadLine();
+
+                if (temperature == "")
+                    break;
+                logger.WriteLog("현재온도 : " + temperature);
+            }
+        }
+    }        
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //객체가 콘솔로그(화면에 찍기) 또는 파일로그(파일에 찍기) 중 1개를 선택해서 로그만들기
+            ClimateMonitor monitor = new ClimateMonitor(new FileLogger("My Log.txt"));
+            monitor.start();
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InterfaceApp07
+{
+    interface ILooger               //인터페이스끼리는 상속받아도 구현 안해도 되지만
+    {
+        void WriteLog(string message);
+    }
+    interface IFormattableLogger : ILooger
+    {
+        void A();
+    }
+    class CondoleLogger2 : IFormattableLogger           //클래스는 반드시 구현해야한다. 2개일지라도 2개다
+    {
+        public void A()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WriteLog(string message)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
+}
+
+using System;
+
+namespace InterfaceApp08
+{//p.326
+    interface IRunnable
+    {
+        void Run();
+    }
+    interface IFlyable
+    {
+        void Fly();
+    }
+    class Flyingcar : IRunnable, IFlyable
+    {
+        public void Run()
+        {
+            Console.WriteLine("Run! Run!");
+        }
+        public void Fly()
+        {
+            Console.WriteLine("Fly! Fly!");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Flyingcar car = new Flyingcar();
+            car.Run();
+            car.Fly();
+
+            IRunnable runnable = car as IRunnable;
+            runnable.Run();
+
+            IFlyable flyable = car as IFlyable;
+            flyable.Fly();
+        }
+    }
+}
+
+
