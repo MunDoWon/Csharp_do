@@ -17,3 +17,75 @@ class Program
         looger.WriteLog("장애이벤트 발생");
     }
 }
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InterfaceApp01
+{
+    interface Wing      //클래스는 아니지만 부품처럼 쓸 수 있는 클래스
+    {
+        void Fly();         //public 불가능
+    }
+    class Horse
+    {
+
+    }
+    class Angle : Wing
+    {
+        public void Fly()
+        {
+            Console.WriteLine("천사가 날다.");
+        }
+    }
+    class Unicon : Horse, Wing         //C#,java다중상속불가능, C++가능
+    {
+            public void Fly()
+            {
+                Console.WriteLine("유니콘이 날다.");
+            }
+        }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Angle a = new Angle();
+            a.Fly();
+            Unicon unicon = new Unicon();
+            unicon.Fly();
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InterfaceApp03
+{
+    //p.316
+    interface ILooger
+    {
+        void WriteLog(string message);
+    }
+    class ConcoleLogger : ILooger
+    {
+        public void WriteLog(string message)
+        {
+            Console.WriteLine($"{DateTime.Now.ToLocalTime()}  {message}");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ConcoleLogger c = new ConcoleLogger();
+            ILooger logger = new ConcoleLogger();
+            logger.WriteLog("Hello World");
+        }
+    }
+}
