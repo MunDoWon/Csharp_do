@@ -1,0 +1,27 @@
+using System;
+
+namespace ParticalClassApp
+{
+    partial class A
+    {
+        public void Method1()
+        {
+            Console.WriteLine("메소드1 실행");
+        }
+    }
+    partial class A
+    {
+        public void Method2()
+        {
+            Console.WriteLine("메소드2 실행");
+        }
+
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
+}
