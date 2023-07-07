@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+
+namespace StringApp03
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //문자열을 condole.readline()입력받아 뒤집어서 출력하라
+
+            string a = Console.ReadLine();
+
+            for (int i = a.Length - 1; i >= 0; i--)
+            {
+                Console.Write(a[i]);
+            }
+
+            string input = Console.ReadLine();
+            string reversed = "";
+
+            for (int i = input.Length - 1; i >= 0; i--)
+            {
+                reversed += input[i];
+            }
+
+            Console.WriteLine(reversed);
+
+            string inp = Console.ReadLine();
+            char[] array = inp.ToCharArray(); //문자 배열로전환
+            Array.Reverse(array);
+            string reverse = new string(array);
+            Console.WriteLine(reverse);
+
+            //Sysstem stack
+            string inpu = Console.ReadLine();
+            Stack<char> stack = new Stack<char>(inpu);
+            string re = string.Join(" ", stack);
+            Console.Write(re);
+
+
+            string[] arr = { "안녕", "하세요", "반갑", "습니다." };
+            foreach (string s in arr)
+                Console.WriteLine(s);
+
+            int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+            foreach (int number in arr)
+                Console.WriteLine(number);
+
+            string greeting = "Good Moring";
+            Console.WriteLine(greeting.Substring(0, 5));
+            Console.WriteLine(greeting.Substring(5));
+            Console.WriteLine();
+
+            string[] arr = greeting.Split(
+                new string[] { " " }, StringSplitOptions.None);
+
+            foreach (string element in arr)
+            {
+                Console.WriteLine(element);
+            }
+
+
+            string[] arr = greeting.Split(' ');
+            Console.WriteLine(arr[0] + arr[1]);
+        }
+    }
+}
