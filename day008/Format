@@ -1,0 +1,75 @@
+using System;
+using System.Globalization;
+
+namespace FormatApp01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //p.102 
+            Console.WriteLine("제목 : {0}", "이것이 C#이다");    //중괄호 안에 있는 0은 인덱스를 나타냄
+            Console.WriteLine("Total : {0, 7:D}", 123);          // 중괄호 안에 있는 0은 인덱스를 나타내며, 두 번째 인자인 123을 출력합니다.
+                                                                 // 7:D는 출력될 숫자의 자릿수를 7로 맞추고, 정수 형식으로 출력합니다.
+            string result = string.Format("{0}DEF", "ABC");      // "ABC"를 대입하여 문자열을 생성합니다. 따라서 "ABCDEF"가 출력됩니다.
+            Console.WriteLine(result);
+
+            string result2 = string.Format("{0,-10}DEF", "ABC");        //-10은 출력될 문자열의 폭을 10으로 설정하고, 왼쪽 정렬합니다
+            Console.WriteLine(result2);
+
+            string fmt = "{0,-20}{1,-15}{2,30}";
+            Console.WriteLine(fmt, "Pubisher", "Author", "Title"); //fmt 형식 문자열에 인자로 주어진것을 출력
+                                                                   //폭을 지정하여 각 항목이 정렬된 형태로 출력됩니다.
+            Console.WriteLine(fmt, "순번", "이름", "내용"); //한글은 2개씩
+
+            //p.110
+            Console.WriteLine();
+
+            Console.WriteLine("{0:D}", 255);        //정수 형식으로 출력
+            Console.WriteLine($"{255:D}");
+            Console.WriteLine("{0:D}", 0xff);
+
+            Console.WriteLine("{0:X}", 255);        //16진수 형식으로 출력
+            Console.WriteLine("{0:X}", 0xff);
+
+
+            Console.WriteLine("{0:N}", 12345678);       //숫자를 천 단위로 구분하여 출력
+            Console.WriteLine("{0:F}", 123.45);         //{0}에 123.45를 대입하여 고정 소수점 형식으로 출력
+            Console.WriteLine("{0:E}", 123.456789);     //지수 형식으로 출력
+
+            DateTime dt = new DateTime(2023, 03, 04, 23, 18, 22);  //.now는 지금
+
+            Console.WriteLine("12시간 형식 : {0:yyyy-MM-dd tt hh:mm:ss(ddd)}", dt);
+            Console.WriteLine("24시간 형식 : {0:yyyy-MM-dd HH:mm:ss(ddd)}", dt);
+            Console.WriteLine($"24시간 형식 : {dt:yyyy-MM-dd HH:mm:ss(ddd)}");
+
+            CultureInfo ciko = new CultureInfo("ko-KR");
+            Console.WriteLine();
+            Console.WriteLine(dt.ToString("yyyy-MM-dd tt hh:mm:ss(ddd)", ciko));
+            Console.WriteLine(dt.ToString("yyyy-MM-dd HH:mm:ss(ddd)", ciko));
+            Console.WriteLine(dt.ToString(ciko));
+
+            CultureInfo ciEn = new CultureInfo("en-Us");
+            Console.WriteLine();
+            Console.WriteLine(dt.ToString("yyyy-MM-dd tt hh:mm:ss(ddd)", ciEn));
+            Console.WriteLine(dt.ToString("yyyy-MM-dd HH:mm:ss(ddd)", ciEn));
+            Console.WriteLine(dt.ToString(ciEn));
+
+            Console.WriteLine();
+            //p.113
+            string name = "김튼튼";
+            int age = 23;
+            Console.WriteLine($"{name,-10},{age:D3}");
+
+            name = "박날씬";
+            age = 30;
+            Console.WriteLine($"{name},{age,-10:D3}");
+
+            name = "이비실";
+            age = 17;
+            Console.WriteLine($"{name},{(age > 20 ? "성인" : "미성년자")}");
+
+
+        }
+    }
+}
