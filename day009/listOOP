@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+
+namespace OOPCollection01
+{
+    class Person
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Phonenumber { get; set; }
+        public Person(string name)      //생성자
+        {
+            Name = name;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Person jaan = new Person("제인");
+            Person tom = new Person("톰");
+            Person bob = new Person("밥");
+
+            List<Person> list = new List<Person>();
+            list.Add(jaan);
+            list.Add(tom);
+            list.Add(bob);
+
+            //제거
+            list.Remove(tom);
+            //추가?
+            Person sam = new Person("샘");
+            list.Add(sam);
+            //정렬 출력
+            //Array.Sort(list); x
+
+            List<int> list2 = new List<int>() { 9, 8, 6, 5 };
+            list2.Sort();
+
+            //list.Sort(); x
+
+            list.Sort((a, b) => a.Name.CompareTo(b.Name));
+            //CompareTo 메서드를 사용하여 문자열 비교를 수행하며,
+            //반환 값에 따라 정렬 순서가 결정됩니다.
+
+            foreach (Person p in list)
+            {
+                Console.WriteLine(p.Name);
+            }
+        }
+    }
+}
