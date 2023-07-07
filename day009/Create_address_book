@@ -1,0 +1,143 @@
+using Create_address_book;
+using System;
+using System.Collections.Generic;
+
+namespace Create_address_book
+{
+    class Address
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Phonenumber { get; set; }
+        public Address(int iD, string name, string phonenumber)
+        {
+            ID = iD;
+            Name = name;
+            Phonenumber = phonenumber;
+        }
+        //주소 출력
+        public void PrintAddress()
+        {
+            Console.WriteLine($"\n{ID}\t{Name}\t{Phonenumber}");
+        }
+    }
+    //메뉴설정
+
+    class AddressBook
+    {
+        private List<Address> addressList;
+        public AddressBook()
+        {
+            addressList = new List<Address>();
+        }
+        //데이터 삽입
+        public void Insertdate(int id, string name, string phonenumber)
+        {
+            Address address = new Address(id, name, phonenumber);
+            addressList.Add(address);
+            Console.WriteLine("데이터를 입력했습니다.");
+        }
+        //데이터 삭제
+        public void Removeadate(int id)
+        {
+            Address address = addressList.Find(a => a.ID == id); //객체 a의 Id 속성이 id와 같은지 확인한다
+            if (address != null)
+            {
+                addressList.Remove(address);
+                Console.WriteLine("데이터를 삭제했습니다.");
+            }
+            else
+            {
+                Console.WriteLine("ID가 검색되지 않았습니다.");
+            }
+        }
+        //데이터 조회
+        public void Searchdate(int id)
+        {
+            Address address = addressList.Find(a => a.ID == id);
+            if (address != null)
+            {
+                Console.Write("ID\tNeme\tPhonenumber\n");
+                address.PrintAddress();
+            }
+            else
+            {
+                Console.WriteLine("해당ID가 없습니다.");
+            }
+
+        }
+        //데이터 수정
+        public void UpdateData(int id, string name, string phonenumber)
+        {
+            Address address = addressList.Find(a => a.ID == id); //없으면 null
+            if (address != null)
+            {
+                address.Name = name;
+                address.Phonenumber = phonenumber;
+                Console.WriteLine("데이터가 수정되었습니다.");
+            }
+            else
+            {
+                Console.WriteLine("검색되는 ID가 없습니다.");
+            }
+        }
+    }
+}
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        AddressBook addressBook = new AddressBook();
+        while (true)
+        {
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("1.데이터 입력");
+            Console.WriteLine("2.데이터 삭제");
+            Console.WriteLine("3.데이터 조회");
+            Console.WriteLine("4.데이터 수정");
+            Console.WriteLine("5.프로그램 종료");
+            Console.WriteLine("-------------------------");
+            Console.Write("메뉴 : ");
+            int menu = int.Parse(Console.ReadLine());
+
+            switch (menu)
+            {
+                case 1:
+                    Console.Write("ID를 입력하세요. : ");
+                    int id = int.Parse(Console.ReadLine());
+                    Console.Write("이름을 입력하세요. : ");
+                    string name = Console.ReadLine();
+                    Console.Write("전화번호를 입력하세요. : ");
+                    string phonenumber = Console.ReadLine();
+                    addressBook.Insertdate(id, name, phonenumber);
+                    break;
+                case 2:
+                    Console.Write("삭제할 ID를 입력하세요. : ");
+                    int removeid = int.Parse(Console.ReadLine());
+                    addressBook.Removeadate(removeid);
+                    break;
+                case 3:
+                    Console.Write("조회할 ID를 입력하세요. : ");
+                    int searchid = int.Parse(Console.ReadLine());
+                    addressBook.Searchdate(searchid);
+                    break;
+                case 4:
+                    Console.Write("수정할 ID를 입력하세요. : ");
+                    int updateid = int.Parse(Console.ReadLine());
+                    Console.Write("수정될 이름를 입력하세요. : ");
+                    string updatename = Console.ReadLine();
+                    Console.Write("수정될 전화번호를 입력하세요. : ");
+                    string updatenumber = Console.ReadLine();
+                    addressBook.UpdateData(updateid, updatename, updatenumber);
+                    break;
+                case 5:
+                    Console.WriteLine("프로그램을 종료합니다.");
+                    return;     //리턴으로 루프나감
+                default:
+                    Console.WriteLine("보기의 번호를 입력해주세요.");
+                    break;
+            }
+        }
+    }
+}
+
