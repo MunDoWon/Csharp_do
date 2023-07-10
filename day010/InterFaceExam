@@ -1,0 +1,56 @@
+using System;
+
+namespace InterFaceExam01
+{
+    ////유니콘->말, 천사의 날개
+    //interface IWing       //형용사적인 작명, I를 앞에 붙어줌
+    //{
+    //    void fly();
+    //}
+    //class Angle{}
+    //class Horse{}
+    //class Unicon : Horse, IWing
+    //{
+    //    public void fly()
+    //    {
+    //        //자유로운 코딩
+    //        Console.WriteLine("Fly~");
+    //    }
+    //}
+
+    //영웅(Hero)을 상속받은 기사(Knight)
+    //public string Name{get;set;}
+    //무기(Weapon),활(Bow)
+    //메소드 공격(Attack)
+    //아더가 활을 쏩니다 출력
+    class Hero
+    {
+        public string Name { get; set; }
+    }
+    interface IWeapon { }
+    interface IBow : IWeapon
+    {
+        void Attack();
+    }
+    class Knight : Hero
+    {
+        public Knight(string name)
+        {
+            Name = name;
+        }
+        public void Attack()
+        {
+            Console.WriteLine($"{Name}가 활을 쏩니다.");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Knight knight = new Knight("아더");
+            knight.Attack();
+            //Unicon unicon = new Unicon();
+            //unicon.fly();
+        }
+    }
+}
