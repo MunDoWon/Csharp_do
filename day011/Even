@@ -1,0 +1,38 @@
+using System;
+
+namespace Evenopen
+{
+    class Calculator
+    {
+        public int Even(int a, int b)
+        {
+            int num = 0;
+            for (int i = a; i <= b; i++)
+            {
+                int cnt = 0;
+                for (int j = 1; j <= i; j++)
+                {
+                    if (i % j == 0)
+
+                        cnt++;
+                }
+                if (cnt % 2 == 0)
+                {
+                    num++;
+                }
+            }
+            Console.WriteLine(num);
+            return num;
+        }
+        static void Main(string[] args)
+        {
+            Calculator p = new Calculator();
+            //두 정수 A, B (1 <= A <= B <= 2,000,000,000) 가 주어질때
+            //A 와 B 사이 (A, B 포함) 에 약수의 개수가 짝수인 수의 개수를 출력하시오.
+            int A = int.Parse(Console.ReadLine());
+            int B = int.Parse(Console.ReadLine());
+            p.Even(A, B);
+          
+        }
+    }
+}
