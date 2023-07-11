@@ -1,0 +1,20 @@
+using System;
+
+namespace Angleopen
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //n각형의 내각의 합과 외각의 합을 구하는 문제이다.
+            // n 은 3 이상 20 이하의 정수이다.내각의 합, 외각의 합을 출력한다.
+            //내각의 합은 (n - 2) * 180으로 계산.
+            int n = int.Parse(Console.ReadLine());
+            int inangle, outangle;
+            inangle = (n - 2) * 180;
+            outangle = 360;
+
+            Console.WriteLine($"내각의 합 :{inangle} 외각의 합 : {outangle}");
+        }
+    }
+}
