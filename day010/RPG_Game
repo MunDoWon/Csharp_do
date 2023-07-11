@@ -1,0 +1,58 @@
+namespace RPG_Game.Hero
+{
+    class Hero
+    {
+        public string Name { get; set; }
+    }
+}
+using System;
+
+namespace RPG_Game.Hero
+{
+
+    class Knight : Hero
+    {
+        public Knight(string name)
+        {
+            Name = name;
+        }
+        public void Attack()
+        {
+            Console.WriteLine($"{Name}가 활을 쏩니다.");
+        }
+    }
+}
+namespace RPG_Game.Weapon
+{
+    interface IWeapon
+    {
+
+    }
+}
+namespace RPG_Game.Weapon
+{
+    interface IBow : IWeapon
+    {
+        void Attack();
+    }
+
+}
+namespace InterFaceExam01
+{
+    //영웅(Hero)을 상속받은 기사(Knight)
+    //public string Name{get;set;}
+    //무기(Weapon),활(Bow)
+    //메소드 공격(Attack)
+    //아더가 활을 쏩니다 출력
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Hero.Knight knight = new Hero.Knight("아더");
+            knight.Attack();
+            //Unicon unicon = new Unicon();
+            //unicon.fly();
+        }
+    }
+}
