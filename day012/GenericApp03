@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace GenericApp03
+{
+    //p.433 참조
+    class Mylist<T> where T : struct        //T는 값형식
+    {
+
+    }
+    class Mylist1<T> where T : class        //T는 참조형식
+    {
+
+    }
+    class Mylist2<T> where T : new()          //T는 매개변수 없는 생성자 있어야함
+    {
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> list = new List<int>();
+            for (int i = 0; i < 5; i++)
+            list.Add(i);
+           
+            foreach( int element in list)
+                Console.WriteLine(element);
+            Console.WriteLine();
+            
+            list.Remove(2);
+
+            foreach (int element in list)
+                Console.WriteLine(element);
+            Console.WriteLine();
+
+            list.Insert(0, 2);      //위치,값
+            foreach (int element in list)
+                Console.WriteLine(element);
+            Console.WriteLine();
+
+           
+        }
+    }
+}
