@@ -1,0 +1,9 @@
+12일차**
+Enumerable01	IEnumerable, IEnumerator로 부터 상속받은 함수, 작동과 채우기
+EnumeratorApp01 		IEnumerator GetEnumerator() 사용
+IndexerApp01,02**		인덱서 사용과 배열알기	
+인덱서 퀴즈 - 1 2		문자열 빈도수 계산
+Generic 123 		T의 다양한 사용법
+Generic04		Queue 사용법
+Generic05		Dictionary 함수 사용법
+SQL02 		 where or and 부정연산자 in not between a and b like'%'
