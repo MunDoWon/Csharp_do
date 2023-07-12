@@ -1,0 +1,32 @@
+using System;
+
+namespace IndexerQuiz02
+{
+    class CountChar
+    {
+        public int Countstring(char[] arr, char ch)
+        {
+            int N=0;
+            foreach (char c in arr) 
+            {
+                if (c == ch) N++;
+            }
+            return N;
+        } 
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("문자열 입력 : ");
+            string str = Console.ReadLine();
+            Console.Write("문자열 입력 : ");
+            string str2 = Console.ReadLine();
+            char c = str2[0];
+            CountChar count = new CountChar();
+            int result = count.Countstring(str.ToCharArray(), c);
+            Console.WriteLine(result);
+           
+        }
+    }
+}
