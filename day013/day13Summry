@@ -1,0 +1,12 @@
+13일차
+ExceptionApp 		catch의 예외처리 문항들,강제로 예외를 발생시키고 안전하게 catch로 처리하는방법
+ExceptionApp03		finally문 예외든 아니든 반드시 실행된다
+DelegateApp01		'대리자' 메소드와 같이 선언, 대리자가 참조할 메소드의 반환형식과 매개변수는 대리자를 따라야함
+			대리자 선언,인스턴스생성,이때 참조할 메소드를 인수로 넘김 ,대리자호출
+DelegateApp02		오름차순 내림차순을 
+
+SQL 		UNION 합집합 INTERSECT 교집합 MINUS 차집합 
+		 UPPER() 대문자로, LOWER()소문자로, INITCAP() 첫대문 나머지소문자,LENGTH() 문자열 길이,
+		LENGTH('한글'),LENGTHB('한글') 한글바이트수, SUBSTR(,,) 문장,시작점,갯수출력 
+		SUBSTR(-1) 음수는 뒤에서부터출력, INSTR(,) 문자열에서,찾는문자,시작점,N번째 등장위치
+		REPLACE() 문자열,문자지정,변경문자설정 
