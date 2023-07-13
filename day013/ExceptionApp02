@@ -1,0 +1,29 @@
+using System;
+
+namespace ExceptionApp02
+{
+    internal class Program
+    {
+        static void Dosomething(int arg)
+        {
+            if (arg < 10)
+                Console.WriteLine(arg);
+            else
+                throw new Exception("arg가 10보다 큽니다.");      //예외 강제발생
+        }
+        static void Main(string[] args)
+        {
+            try
+            {
+                Dosomething(1);
+                Dosomething(11);
+                Dosomething(13);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+    }
+}
