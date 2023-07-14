@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Swimmingday
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int day = int.Parse(Console.ReadLine());
+            switch (day)
+            {
+                case 1:
+                    Console.WriteLine("월요일: yes");
+                    break;
+                case 2:
+                    Console.WriteLine("화요일:oops");
+                    break;
+                case 3:
+                    Console.WriteLine("수요일: yes");
+                    break;
+                case 4:
+                    Console.WriteLine("목요일:oops");
+                    break;
+                case 5:
+                    Console.WriteLine("금요일: yes");
+                    break;
+                case 6:
+                    Console.WriteLine("토요일:oops");
+                    break;
+                case 7:
+                    Console.WriteLine("일요일:oops");
+                    break;
+                    default: Console.WriteLine("1~7을 입력하세요.");
+                    break;
+
+            }
+        }
+    }
+}
