@@ -1,0 +1,31 @@
+using System;
+
+namespace DelegateChainEasy
+{
+    delegate void contact(string name);
+    internal class Program
+    {
+        public static void Call(string name)
+        {
+            Console.WriteLine($"{name}한테 전화해줘");
+        }
+        public static void DirectMassege(string name)
+        {
+            Console.WriteLine($" {name}한테 DM해줘");
+
+        }
+        public static void Kakaotalk(string name)
+        {
+            Console.WriteLine($"{name}한테 카톡해줘");
+        }
+
+        static void Main(string[] args)
+        {
+            contact con = new contact(Call);
+            con += new contact(DirectMassege);
+            con += new contact(Kakaotalk);
+
+            con("엄마");
+        }
+    }
+}
