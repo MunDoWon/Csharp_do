@@ -1,0 +1,10 @@
+14일차
+Swimmingday 		swich, if-eles if, 활용 예제 
+DelegateChainEasy,06	06의 Delegat예제와 쉬운예제 Delegat로 함수처럼 메소드를 합칠 수 있음
+AnonymousApp01		만들자 마자 바로 사용하는 익명 메소드
+EventTestApp		이벤트 선언과 메인에서 사용법
+DelegateExam		델리케이트와 이벤트를 같이 사용해서 이벤트를 불러오는법
+SQL			LPAD, RPAD 데이터의 빈공간을 채우는 함수/CONCAT문자열 붙이기/'A'||'B'||'C' 많이쓰는 문자붙이기
+			TRIM : 공백제거/ROUND : 반올림함수/ TRUNC : 버림함수/ CEIL : 가장가까운 정수 올림/ FLOOR: "" 내림
+			MOD: 나머지 구하는 연산자/ 다중행함수 SUM : 더하기/ COUNT: 총갯수세기/ MAX: 최댓값 /MIN: 최솟값
+			GROUP BY '' : 단일행 첨부해서 사용
