@@ -1,0 +1,54 @@
+using System;
+
+namespace FactorialQuiz
+{
+    class Calculator
+    {
+        //점화식-일종의 다이나믹
+        public int Factorial(int n)
+        {
+            int result = 1;
+            for (int i = 2; i <= n; i++)
+            {
+                result *= i;
+            }
+            return result;
+        }
+        //재귀
+        public int FactorialRecursive(int n)
+        {
+            if (n == 0)
+                return 1;
+            else
+                return n * Factorial(n - 1);
+        }
+
+        //다이나믹
+        public int FactorialDynamic(int n, int[] arr)
+        {
+            if (n == 0)
+                return arr[n] = 1;
+
+            if (arr[n] != 0)
+                return arr[n];
+
+            return arr[n] = n * FactorialDynamic(n - 1, arr);
+        }
+
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = 5;
+            Calculator calculator = new Calculator();
+            int fact = calculator.Factorial(num);
+            Console.WriteLine($"{num}의 팩토리얼은 {fact}입니다.");
+            fact = calculator.FactorialRecursive(num);
+            Console.WriteLine($"재귀적 방법을 이용한 {num}의 팩토리얼은 {fact}입니다.");
+            int[] arr = new int[num + 1];
+            fact = calculator.FactorialDynamic(num, arr);
+            Console.WriteLine($"재귀적 방법을 이용한 {num}의 팩토리얼은 {fact}입니다.");
+        }
+    }
+}
