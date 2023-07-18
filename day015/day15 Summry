@@ -1,0 +1,9 @@
+15일차
+SQL5	날짜 함수들	HIREDATE: 입사한 날짜/ SYSDATE: 지금날짜/ ADD_MONTHS(,N):N달뒤/ MONTHS_BETWEEN(): 사이몇달
+			NEXT_DAY(X,):X 다음주/LAST_DAY: 마지막날/ ROUND('CC'):포맷/YYYY: 내년1월/Q: 달1일/DDD:날짜/HH:시간
+			TO_CHAR(SYSDATE,'MM'):월,MONRH /DY,DAY: 날짜/TO_CHAR(SYSDATE,'YYYY/MM/DD HH24:MI:SS'):시간
+			TO_CHAR(SYSDATE,'MON','NLS_DATE_LANGUAGE = JAPANESE') AS MON_JAP: 언어변경 월,일
+			TO_DATE('2018-07-14','YYYY-MM-DD'): 데이터 타입으로 변환/TO_NUMBER('1,300','999,999'): 숫자로 변환
+			TO_CHAR(SAL,'$999,999.00'): 급여출력방식
+			CREATE TABLE: 테이블생성/INSERT INTO: 데이터 삽입/ DROP TABLE: 테이블 지우기/
+OracleApp_create		오라클과 이어서 코딩 서버 생성,입력
