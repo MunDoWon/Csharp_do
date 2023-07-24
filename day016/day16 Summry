@@ -1,4 +1,14 @@
 FactorialQuiz		팩토리얼 문제 3가지 방법
 WhileroopExam01		ㄴ중복 배열
 Fibonaccinumbers		피보나치수열문제
-SQL6			JOIN: 테이블 결합 M*N/E.=D. /SEQ 사용/
+SQL006   비등가 조인 : E.SAL BETWEEN S.LOSAL AND S.HISAL
+			자체 조인: E.MGR = C.EMPNO; FROM EMP E1,EMP E2 WHERE E1.MGR=E2.MGR;
+			외부조인 OUTTER JOIN (+) 위치/ ANSI SLQ-99
+			JOIN ON/8-14,15/ 239-3,4/
+			#SUB QUERY 한줄를 그대로 조건에 삼입
+			9-4서브쿼리의 결과값이 날짜형인 경우
+			9-5 JOIN 구문에서 SQ가 동작할까?
+			#다중행 연산자 249 IN: 데이터,하나라도 일치/ ANY,SOME: 조건식,하나이상/ALL: 조건식, 결과모두
+			EXISTS: 결과,존재시/9-14, 266-1,2
+			테이블 복사/날짜 데이터 입력/ 테이블 수정: UPDATE~~SET~~/ 테이블 삭제: DELETE FROM ~~
+			되돌리기: ROLLBACK/ 저장: COMMIT
