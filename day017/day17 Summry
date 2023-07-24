@@ -1,0 +1,19 @@
+17일차
+
+
+SQL007			테이블 구조복사:  WHERE 1<>1 / 데이터 삽입:INSERT INTO~~(데이터형)VALUES(데이터)
+			데이터 변경:UPDATE 테이블명 SET (변경) WHERE (해당조건)/데이터 삭제 DELETE FROM 테이블명 WHERE 조건
+			287-1,2,3,4,5/컬럼 생성 규칙/테이블 만들기:이름 데이터형/
+			구조변경 ALTER/ 컬럼추가ADD: ALTER TABEL 테이블명 ADD 컬럼 데이터형
+			컬럼삭제DROP: ALTER TABEL 테이블명 DROP COLUMN 컬럼명
+			컬럼변경RENAME: ALTER TABEL 테이블명 RENAME COLUMN 기존컬럼 TO 변경컬럼
+ALTER TABEL 테이블명=""	컬럼타입변경MODIFY:"" MODIFY 컬럼명 데이터형
+			데이터 강제삭제DROP: DROP TABLE 테이블명
+			#324-1~5// 14장 제약CONSTRAINT, 테이블 생성시 NOT NULL 지정: VARCHAR2(20) NOT NULL,
+			제약확인 SELECT OWNER, CONSTRAINT_NAME,CONSTRAINT_TYPE,TABLE_NAME(확일할 제약들)
+			FROM USER_CONSTRAINTS;
+			제약지정시 이름생성: 컬럼명 데이터형 CONSTRAINT (MY_LOGID) NOT NULL,
+			#제약조건이 없는 컬럼을 제약조건지정하기(데이터가 없어야함)
+			ALTER TABLE 테이블명 MODIFY 컬럼명 NOT NULL;
+			14-39 FOREIGN KEY 지정:CONSTRAINT DEPRFK_DEPTNO_PK PRIMARY KEY,
+			14-40
