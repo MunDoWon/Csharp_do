@@ -1,0 +1,50 @@
+using System;
+using System.IO;
+using System.Text;
+using System.Text.Json;
+
+namespace SerializationApp
+{
+    class NameCard
+    {
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public int age { get; set; }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string path = "a.json";
+            using (Stream ws = new FileStream(path, FileMode.Create))//using을 쓰면 close를 안써도 된다.
+            {
+                NameCard nc = new NameCard();
+                nc.Name = "홍길동";
+                nc.Phone = "010-1111-1111";
+                nc.age = 20;
+
+                //객체직렬화
+                string jsonString = JsonSerializer.Serialize<NameCard>(nc);
+                byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonString);
+                ws.Write(jsonBytes, 0, jsonBytes.Length);
+            }
+            //a.json 파일 만들기 객체 직렬화해서 파일에 넣기
+            //파일에서 객체 꺼내기 그리고 콘솔에서 출력
+            using (Stream rs = new FileStream(path, FileMode.Open))
+            {
+                byte[] jsonBytes = new byte[rs.Length];
+                rs.Read(jsonBytes, 0, jsonBytes.Length);
+                string jsonString = Encoding.UTF8.GetString(jsonBytes);
+
+
+                NameCard nc2 = JsonSerializer.Deserialize<NameCard>(jsonString);
+
+                Console.WriteLine(nc2.Name);
+                Console.WriteLine(nc2.Phone);
+                Console.WriteLine(nc2.age);
+            }
+        }
+    }
+}
+
+
