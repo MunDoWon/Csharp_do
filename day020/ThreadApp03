@@ -1,0 +1,43 @@
+using System;
+using System.Threading;
+
+namespace ThreadApp03
+{
+    internal class Program
+    {
+        static void Plus()
+        {
+            int cnt = 0;
+            for (int i = 1; i <= 100; i++)
+            {
+                cnt += i;
+            }
+            Console.WriteLine(cnt);
+            Console.WriteLine("스레드1 종료");
+        }
+        static void Alphabet()
+        {
+            for (char c = 'A'; c <= 'Z'; c++)
+            {
+                Console.Write(c + " ");
+            }
+            Console.WriteLine("스레드2 종료");
+        }
+        static void Main(string[] args)
+        {
+            //thread2개 name고 준다.
+            //1.1~100까지 더하기 5050출력
+            //2.A~Z알파벳출력
+            //main 두 스레드가 끝날때 까지 기다리고 종료
+            Thread t1 = new Thread(new ThreadStart(Plus));
+            t1.Name = "5050";
+            t1.Start();
+            t1.Join();
+            Thread t2 = new Thread(new ThreadStart(Alphabet));
+            t2.Name = "A to Z";
+            t2.Start();
+            t2.Join();
+            Console.WriteLine("메인프로그램 종료");
+        }
+    }
+}
