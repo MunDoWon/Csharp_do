@@ -1,0 +1,32 @@
+using System;
+using System.IO;
+using System.Windows.Forms;
+
+namespace WinCopyApp
+{
+    public partial class CopyFrom : Form
+    {
+        private string sourceFile;
+        private string destFile;
+        public CopyFrom()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog= new OpenFileDialog())
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    sourceFile = openFileDialog.FileName;
+                    lblSrcPath.Text = sourceFile;
+                }
+            }
+        }
+        private void btn_dstfile_Click(object sender, EventArgs e)
+        {
+            
+        }
+    }
+}
