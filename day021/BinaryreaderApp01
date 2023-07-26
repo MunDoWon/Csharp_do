@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace BinaryreaderApp01
+{
+    internal class Program
+    {
+        static void Write(string path, byte[] picture)
+        {         
+            using (FileStream fs = new FileStream(path, FileMode.Create))
+            {
+                BinaryWriter bw = new BinaryWriter(fs);
+                bw.Write(picture);
+                bw.Flush(); //이진파일 Flush() 신경
+                bw.Close();
+            }
+        }
+        static void Main(string[] args)
+        {
+            string path = "C:\\Temp\\pic1.jpg";
+            byte[] picture;
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                BinaryReader br = new BinaryReader(fs);
+                picture = br.ReadBytes((int)fs.Length);
+                br.Close();         
+            }
+            path = "C:\\Temp\\pic2.jpg";
+            Thread t1 = new Thread (() => Write(path, picture));
+            t1.Start();
+            t1.IsBackground = true; //메인이 죽으면 나도 죽는다
+            t1.Join();  //메인스레드가 기다림
+        }
+    }
+}
