@@ -1,0 +1,22 @@
+using System.IO;
+using System.Text;
+
+namespace FileCopyQuiz
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string path = "A.txt";
+            FileStream fs = new FileStream(path, FileMode.Create);
+            StreamWriter ws = new StreamWriter(fs, Encoding.UTF8);
+            ws.Write("안녕하세요");
+            ws.Close();
+
+            string path2 = "B.txt";
+            File.Copy(path, path2);
+
+
+        }
+    }
+}
