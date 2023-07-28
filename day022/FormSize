@@ -1,0 +1,47 @@
+using System;
+using System.Windows.Forms;
+
+namespace FormSize
+{
+
+    class MainApp : Form
+    {
+        static void form_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Console.WriteLine("클릭했어요.");
+            Form form = (Form)sender;    //Down Casting from이 main앱
+            int oldWidth = form.Width;
+            int oldHeigt = form.Height;
+
+            if (e.Button == MouseButtons.Right)
+            {
+                if (oldHeigt < oldWidth)
+                {
+                    form.Width = oldHeigt;
+                    form.Height = oldWidth;
+                }
+                Console.WriteLine("우클릭");
+            }
+            else if (e.Button == MouseButtons.Left)
+            {
+                if (oldWidth < oldHeigt)
+                {
+                    form.Width = oldHeigt;
+                    form.Height = oldWidth;
+                }
+                Console.WriteLine("좌클릭");
+            }
+        }
+        static void Main(string[] args)
+        {
+            MainApp form = new MainApp(); // 윈도우 열기
+            form.Width = 600;            // 윈도우 크기
+            form.Height = 400;
+            //마우스 이벤트 처리
+            //1.좌클릭
+            form.MouseClick += (form_MouseDown);
+            //2.우클릭
+            Application.Run(form);
+        }
+    }
+}
