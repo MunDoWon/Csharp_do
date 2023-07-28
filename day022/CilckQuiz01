@@ -1,0 +1,25 @@
+using System;
+using System.Windows.Forms;
+
+namespace CilckQuiz01
+{
+    class MainApp : Form
+    {
+        static void form_Click(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine($"X : {e.X}\nY : {e.Y}");
+            if (e.Button == MouseButtons.Left )
+                Console.WriteLine("왼쪽마우스 버튼을 클릭하셨습니다.");
+            if (e.Button == MouseButtons.Right )
+                Console.WriteLine("오른쪽마우스 버튼을 클릭하셨습니다.");
+            if(e.Button == MouseButtons.Middle )
+                Console.WriteLine("가운데마우스 버튼을 클릭하셨습니다.");
+        }
+        static void Main(string[] args)
+        {
+            MainApp form = new MainApp();
+            form.MouseClick += form_Click;
+            Application.Run(form);
+        }
+    }
+}
