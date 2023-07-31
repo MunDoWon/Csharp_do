@@ -1,0 +1,40 @@
+using System;
+using System.Windows.Forms;
+
+namespace ClockQuiz_win01
+{
+//https://github.com/HaSense/CSharp/blob/master/Network/Quiz/06.DigitalWatch_timer.cs
+    public partial class Form1 : Form
+    {
+        private Timer timer;
+        private int seconds;
+
+        public Form1()
+        {
+            InitializeComponent();
+            timer = new Timer();
+            timer.Interval = 1000; 
+            timer.Tick += Timer_Tick;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            seconds = 0;
+            label1.Text = "00:00";
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            seconds++;
+            int minutes = seconds / 60;
+            int remainingSeconds = seconds % 60;
+            label1.Text = $"{minutes:D2}:{remainingSeconds:D2}";
+
+            if (seconds >= 5 * 60)
+            {
+                timer.Stop();
+            }
+        }
+    }
+}
