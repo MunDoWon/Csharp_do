@@ -17,7 +17,8 @@ namespace Clock_win01
         }
         public void OutNumber()
         {
-            textBox1.AppendText(num + "\r\n");
+            textBox1.AppendText(num + "\r\n");  //text만 쓰면 다하고 찍음 appendtext는 계속찍고 계산
+        }
         }
         public void GetTime()
         {
