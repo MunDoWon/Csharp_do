@@ -1,0 +1,32 @@
+using System;
+
+namespace FuncTest01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //p513
+            Func<string> func1 = () => "안녕하세요";
+            Console.WriteLine(func1);
+
+            Func<double, double> func2 = (x) => x * 3.14;
+            Console.WriteLine(func2(8));
+
+
+            Func<int, int, int> func3 = (x, y) => x + y;
+            Console.WriteLine(func3(100, 200));
+            Console.WriteLine();
+
+            Action act1 = () => Console.WriteLine("Action");  //매개 변수없을때 함수있는 효과
+            act1();
+
+            int result = 0;
+            Action<int> act2 = (x) => result = x * x;     //act는 리턴이 없다.보이드임,아웃필요없음
+            act2(3);
+            Console.WriteLine(result);
+
+
+        }
+    }
+}
