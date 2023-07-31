@@ -1,0 +1,28 @@
+using System;
+using System.Windows.Forms;
+
+namespace FormStyle02
+{
+    class MainApp : Form
+    {
+        static void Main(string[] args)
+        {
+            Button btn = new Button();
+            btn.Text = "버튼눌러줘";
+            btn.Left = 100;
+            btn.Top = 50;
+
+            btn.Click += (object sender, EventArgs e) =>
+            {
+                MessageBox.Show("딸깍");
+            };
+
+            MainApp form = new MainApp();
+            form.Controls.Add(btn);
+            form.Text = "폼과 컨트롤";
+            form.Height = 50;
+            Application.Run(form);
+
+        }
+    }
+}
