@@ -1,0 +1,35 @@
+using System;
+using System.Windows.Forms;
+
+namespace Calculator_winExam01
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {    //p115 3중 for문
+            int iDan, i, iTap;
+            textBox1.Text = "";
+            for (iDan = 2; iDan <= 6; iDan += 4) //가로 단
+            {
+                for (i = 1; i <= 9; i++)     //곱하는수
+                {
+                    for (iTap = 0; iTap <= 2; iTap++)      //i의 변화 1,2,3
+                    {
+                        //정수 + 문자열 --> 문자열
+                        //정수.Tostring()--> 문자열  
+                        textBox1.Text = textBox1.Text + (iDan + iTap) + " * " + i + " = ";
+                        textBox1.Text = textBox1.Text + ((iDan + iTap) * i) + "     ";
+                    }
+                    textBox1.Text = textBox1.Text + Environment.NewLine;
+
+                }
+                textBox1.Text = textBox1.Text + Environment.NewLine;     //\r\n부르는 명령어
+            }
+        }
+    }
+}
