@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"
+<title>Document 제목</title>
+</head>
+<body>
+   <h1><a href="https://www.naver.com" target="_blank">네이버</a></h1>
+   <p>안녕하세요.</p>
+   반갑습니다<p>
+   열심히 HTML을<br> 공부해 &nbsp;&nbsp;&nbsp;&nbsp; 보아요.
+
+</body>
+
+</html>
