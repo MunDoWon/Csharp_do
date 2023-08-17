@@ -21,3 +21,15 @@
 
 </body>
 </html>
+//////////////외부 스타일 시트
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../01/mystyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>제목입니다.</h1>
+</body>
+</html>
