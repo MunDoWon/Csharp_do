@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <meta charset = "UTF-8">
+     <meta name = "viewpoint" content="width=device-width">
+     <title>Document</title>
+<style>
+    h1{
+        color: red;
+        font-size: 40px;
+    }
+  h2,h3{color: blue;
+    font-size: 30px;
+   }
+</style>
+</head>
+<body>
+<h1> 제목입니다.</h1>
+<h2>2제목입니다.</h2>
+<h3>3제목 이여.</h3>
+
+</body>
+</html>
