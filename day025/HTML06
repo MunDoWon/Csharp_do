@@ -45,3 +45,135 @@
 </table>
 </body>
 </html>
+
+////////////////////////////////////
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Document</title>
+
+<style>
+    table,tr,th,td{
+        border: solid black 1px;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+</style>
+</head>
+<body>
+    <h3>2023 KBO 리그 팀순위</h3>
+<table>
+    <tr>
+        <th>팀명</th>
+        <th>경기</th>
+        <th>승</th>
+        <th>무</th>
+        <th>패</th>
+        <th>승률</th>
+        <th>게임차</th>
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F48%2F40%2F09%2F146_2484009_team_image_url_1489031317245.jpg">
+            LG</td>
+        <td>100</td>
+        <td>62</td>
+        <td>2</td>
+        <td>36</td>
+        <td>0.633</td>
+        <td>0.0</td>
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F48%2F40%2F84%2F146_2484084_team_image_url_1615515537185.jpg">
+            SSG</td>
+        <td>99</td>
+        <td>55</td>
+        <td>1</td>
+        <td>43</td>
+        <td>0.561</td>
+        <td>7.0</td>
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F47%2F99%2F38%2F146_2479938_team_image_url_1484017363670.jpg">
+            KT</td>
+        <td>102</td>
+        <td>55</td>
+        <td>2</td>
+        <td>45</td>
+        <td>0.550</td>
+        <td>8.0</td>
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F48%2F39%2F99%2F146_2483999_team_image_url_1550551222142.jpg">
+            NC</td>
+        <td>99</td>
+        <td>50</td>
+        <td>2</td>
+        <td>47</td>
+        <td>0.515</td>
+        <td>11.5</td>        
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F48%2F41%2F02%2F146_2484102_team_image_url_1484020358624.jpg">
+            두산</td>
+        <td>99</td>
+        <td>49</td>
+        <td>1</td>
+        <td>49</td>
+        <td>0.500</td>
+        <td>13.0</td>
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F48%2F40%2F78%2F146_2484078_team_image_url_1611720317101.jpg">
+            KIA</td>
+        <td>95</td>
+        <td>46</td>
+        <td>2</td>
+        <td>47</td>
+        <td>0.495</td>
+        <td>13.5</td>
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F48%2F40%2F94%2F146_2484094_team_image_url_1678771962813.png">
+            롯데</td>
+        <td>100</td>
+        <td>49</td>
+        <td>0</td>
+        <td>51</td>
+        <td>0.490</td>
+        <td>14.0</td>
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F48%2F40%2F93%2F146_2484093_team_image_url_1484021222014.jpg">
+            한화</td>
+        <td>99</td>
+        <td>41</td>
+        <td>6</td>
+        <td>52</td>
+        <td>0.441</td>
+        <td>18.5</td>
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F48%2F40%2F87%2F146_2484087_team_image_url_1484021008458.jpg">
+            삼성</td>
+        <td>102</td>
+        <td>42</td>
+        <td>1</td>
+        <td>59</td>
+        <td>0.416</td>
+        <td>21.5</td>
+    </tr>
+    <tr>
+        <td><img src="https://search.pstatic.net/common?type=o&size=25x19&expire=1&refresh=true&quality=95&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F%2F146%2F48%2F40%2F88%2F146_2484088_team_image_url_1598343590386.jpg">
+            키움</td>
+        <td>109</td>
+        <td>43</td>
+        <td>3</td>
+        <td>63</td>
+        <td>0.406</td>
+        <td>23.0</td>
+    </tr>
+</table>
+</body>
+</html>
