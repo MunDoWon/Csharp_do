@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Decument</title>
+</head>
+<body>
+
+<audio src="../03/mp3/song01.mp3" controls>
+</body>
+</html>
