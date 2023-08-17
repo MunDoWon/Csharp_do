@@ -29,6 +29,18 @@
                    <INPUT TYPE = "checkbox" NAME = "hobby"CHECKED> 음악감상
                  <INPUT TYPE = "checkbox" NAME = "hobby"CHECKED> 영화감상
                  <INPUT TYPE = "checkbox" NAME = "hobby"> 독서
+                    <p>
+
+            이메일 : <INPUT TYPE = "text">@
+                    <select>
+                        <option>선택</option>
+                        <option>naver.com</option>
+                        <option>daum.net</option>
+                        <option>gmail.com</option>
+                        <option>hanmail.net</option>
+                        <option>직접입력</option>
+                    </select><p>
+            내용 : <textarea rows="5" cols="60"></textarea>   
         </FORM>
     </body>
 </html>
