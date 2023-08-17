@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Document</title>
+</head>
+<body>
+
+<video width="320" height="240" controls>
+    <source src="../03/mp3/song01.mp4" type="video/mp4">
+</body>
+</html>
