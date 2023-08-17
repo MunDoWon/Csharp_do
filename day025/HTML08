@@ -33,3 +33,10 @@
     <h1>제목입니다.</h1>
 </body>
 </html>
+//////////////// css
+h1{color: blue;
+font-size: 40px;}
+p{
+    color: blueviolet;
+}
+
