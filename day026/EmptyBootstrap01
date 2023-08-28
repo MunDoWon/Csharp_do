@@ -1,0 +1,31 @@
+namespace EmptyBootstrap01
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddControllersWithViews();
+
+            var app = builder.Build();
+
+            //app.MapGet("/", () => "Hello World!");
+
+            app.UseStaticFiles();
+            app.MapControllerRoute(
+                name:"default",
+                pattern:"{controller=Home}/{action=Index}/{id?}"
+                );
+            app.Run();
+        }
+    }
+}
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h1 class= "bg-primary">Index</h1>
+<h1 class="bg-success">Index</h1>
+
