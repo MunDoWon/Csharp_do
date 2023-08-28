@@ -1,0 +1,113 @@
+Modles
+namespace TagHelp_FormExam01.Models
+{
+    public class Emplyoee
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public int HP { get; set; }
+        public string Gender { get; set; }
+        public int career { get; set; }
+        public int salary { get; set; }
+        public Major Major { get; set; }
+        public string Description { get; set; }
+    }
+       
+    public enum Major
+    {
+        생산,
+        사무,
+        관리
+    }
+}
+
+index
+@model Emplyoee
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">사원정보</h1>
+    
+</div>
+
+<div class ="container">
+    <div class="col-sm-4">
+        <form method="get" action="./">
+            <label asp-for="Name">이름</label>
+            <input asp-for ="Name" 
+                placeholder="이름을 입력하세요." 
+                class="form-control"/>
+            <br />
+            <label asp-for="Age">나이</label>
+            <input asp-for="Age"
+                   placeholder="나이를 입력하세요."
+                   class="form-control" />
+            <br />
+            <label asp-for="HP">전화번호</label>
+            <input asp-for="HP"
+                   placeholder="전화번호를 입력하세요."
+                   class="form-control" />
+            <br />
+            <label>성별</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="Gender" value="남" checked>
+                <label class="form-check-label" asp-for="Gender">
+                    남
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="Gender" value="여" >
+                <label class="form-check-label" asp-for="Gender">
+                    여
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="Gender" value="LGBT">
+                <label class="form-check-label" asp-for="Gender">
+                    LGBT
+                </label>
+            </div>
+
+            <br />
+            <select asp-for="Major"
+                class=" form-control"
+                asp-items="Html.GetEnumSelectList<Major>()">
+                    <option value=" ">부서를 선택해주세요.</option>
+            </select>
+            <br />
+            <label asp-for="career">경력</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="newcomer" checked>
+                <label class="form-check-label" for="newcomer">
+                    신입,1년차
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="adeptcomer">
+                <label class="form-check-label" for="adeptcomer">
+                    2,3년차
+                </label>
+            </div>
+            <input asp-for="career" 
+                placeholder="기타"
+                class="form-control"/>
+                
+            <label asp-for="salary">연봉</label>
+            <input asp-for="salary"
+                   placeholder="(만원)"
+                   class="form-control" />
+          
+            <textarea asp-for="Description"
+                    rows="5" cols="60"
+                    placeholder="기타 상세정보를 작성해주세요."
+                    class="form-control">        
+
+            </textarea>
+            <br />
+            <input type="submit" value="확인"
+                   class="btn btn-outline-primary" />
+        </form>
+    </div>
+</div>
