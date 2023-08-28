@@ -1,0 +1,93 @@
+Models
+namespace MVC_typed.Models
+{
+    public class Employee
+    {
+        public int EmpId { get; set; }
+        public string EmpName { get; set; }
+        public string Designation { get; set; }
+        public int Salay { get; set; }
+    }
+}
+
+HomeController
+using Microsoft.AspNetCore.Mvc;
+using MVC_typed.Models;
+using System.Diagnostics;
+
+namespace MVC_typed.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            //Employee obj = new Employee
+            //{
+            //    EmpId = 100,
+            //    EmpName = "홍길동",
+            //    Designation = "대리",
+            //    Salay = 25000
+            //};
+
+            //1.ViewDate["data1"]=obj;
+            //2.ViweBag.Employee = obj;
+            //3
+
+
+            var myEmployees = new List<Employee>
+            {
+                new Employee {EmpId = 100, EmpName = "홍길동",Designation = "대리",Salay = 30000},
+                new Employee {EmpId = 100, EmpName = "이순신",Designation = "부장",Salay = 60000},
+                new Employee {EmpId = 100, EmpName = "강감찬",Designation = "사원",Salay = 30000}
+            };
+            return View(myEmployees);
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+index
+@* @model MVC_typed.Models.Employee *@
+@* @model List<MVC_typed.Models.Employee> *@
+@model IEnumerable<MVC_typed.Models.Employee> //foreach로 list 사용하려면IEnumerable 써야함
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@* <h2>@Model.EmpId</h2>
+<h2>@Model.EmpName</h2>
+<h2>@Model.Designation</h2>
+<h2>@Model.Salay</h2>
+ *@
+@{
+    foreach(var item in Model)
+    {
+        <h2>@item.EmpId</h2>
+        <h2>@item.EmpName</h2>
+        <h2>@item.Designation</h2>
+        <h2>@item.Salay</h2>
+        <p>---------------------</p>
+    }
+}
