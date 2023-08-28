@@ -1,0 +1,156 @@
+namespace Myproject01
+
+{
+    using Microsoft.EntityFrameworkCore;
+    using System.ComponentModel.DataAnnotations;
+
+    public class Recipe
+    {
+        public int ID { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        public string CookingMethod { get; set; }
+
+        public string Ingredients { get; set; }
+    }
+
+    public class RecipeContext : DbContext
+    {
+        public DbSet<Recipe> Recipes { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseOracle("User Id=c##scott;Password=tiger;Data Source=127.0.0.1/XE;");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Recipe>().HasKey(p => p.ID);
+
+            modelBuilder.Entity<Recipe>().Property(p => p.Name).HasMaxLength(20);
+
+            modelBuilder.Entity<Recipe>().Property(p => p.CookingMethod).HasMaxLength(50);
+
+            modelBuilder.Entity<Recipe>().Property(p => p.Ingredients).HasMaxLength(20);
+
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var context = new RecipeContext())
+            {
+                context.Database.EnsureCreated();
+
+                while (true)
+                {
+                    Console.WriteLine("1. 레시피 추가");
+                    Console.WriteLine("2. 레시피 리스트");
+                    Console.WriteLine("2. 레시피 검색");
+                    Console.WriteLine("4. 레시피삭제");
+                    Console.WriteLine("5. 나가기");
+                    Console.Write("옵션을 선택하세요: ");
+
+                    int choice = int.Parse(Console.ReadLine());
+
+                    switch (choice)
+                    {
+                        case 1:
+                            AddRecipe(context);
+                            break;
+                        case 2:
+                            ListRecipes(context);
+                            break;
+                        case 3:
+                            SearchRecipeByID(context);
+                            break;
+                        case 4:
+                            DeleteRecipe(context);
+                            break;
+                        case 5:
+                            return;
+                    }
+                }
+            }
+            static void AddRecipe(RecipeContext context)
+            {
+
+                Console.Write("레시피 이름: ");
+                string name = Console.ReadLine();
+
+                Console.Write("조리방법 : ");
+                string cookingmethod = Console.ReadLine();
+
+                Console.Write("재료 : ");
+                string ingredients = Console.ReadLine();
+
+                Recipe newRecipe = new Recipe
+                {
+                    Name = name,
+                    CookingMethod = cookingmethod,
+                    Ingredients = ingredients
+                };
+
+                context.Recipes.Add(newRecipe);
+                context.SaveChanges();
+
+                Console.WriteLine("레시피가 성공적으로 등록되었습니다!");
+            }
+
+            static void ListRecipes(RecipeContext context)
+            {
+                var recipes = context.Recipes.ToList();
+
+                Console.WriteLine("레시피:");
+                foreach (var recipe in recipes)
+                {
+                    Console.WriteLine($"ID: {recipe.ID}, Name: {recipe.Name}");
+                    Console.WriteLine($"CookingMethod: {recipe.CookingMethod}");
+                    Console.WriteLine($"Ingredients: {recipe.Ingredients}");
+                    Console.WriteLine();
+                }
+            }
+            static void SearchRecipeByID(RecipeContext context)
+            {
+                Console.Write("Enter the ID of the recipe to search: ");
+                int idToSearch = int.Parse(Console.ReadLine());
+
+                var recipe = context.Recipes.FirstOrDefault(r => r.ID == idToSearch);
+
+                if (recipe != null)
+                {
+                    Console.WriteLine($"Recipe ID: {recipe.ID}");
+                    Console.WriteLine($"Name: {recipe.Name}");
+                    Console.WriteLine($"Ingredients: {recipe.CookingMethod}");
+                    Console.WriteLine($"Instructions: {recipe.Ingredients}");
+                }
+                else
+                {
+                    Console.WriteLine("Recipe not found.");
+                }
+            }
+            static void DeleteRecipe(RecipeContext context)
+            {
+                Console.Write("삭제할 레시피 ID를 입력하세요 : ");
+                int idToDelete = int.Parse(Console.ReadLine());
+
+                var recipeToDelete = context.Recipes.FirstOrDefault(r => r.ID == idToDelete);
+
+                if (recipeToDelete != null)
+                {
+                    context.Recipes.Remove(recipeToDelete);
+                    context.SaveChanges();
+                    Console.WriteLine("레시피가 삭제되었습니다.");
+                }
+                else
+                {
+                    Console.WriteLine("레시피를 찾을 수 없습니다.");
+                }
+            }
+        }
+    }
+}
