@@ -1,0 +1,6 @@
+27일차
+EmptyBootstrap01		wwwroot폴더 생성후 클라이언트 쪽 라이브러리 추가로 bootstrap과 jquery추가
+EmptyViewImports02	최상위문을 _ViewImports.cshtml에 작성해 넣음으로써 생략가능하게 한다.
+TagHeipersTest		Link삽입의 4가지 방법 1번은 구문이라 패턴이 바꼈을 때 오류를 발생시킴
+ImageTagHelpersTest	파일을 wwwroot내의 폴더에 삽입하고 화면 출력하기
+TagHelpers_Form01	asp-for을 써서 웹디자인
