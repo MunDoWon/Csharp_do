@@ -1,0 +1,69 @@
+using Microsoft.AspNetCore.Mvc;
+using ModelBindingTest02.Models;
+using System.Diagnostics;
+
+namespace ModelBindingTest02.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet]
+        public string About(int id, string name)
+        {
+            return "ID : " + id + "Name : " + name;
+        }
+        [HttpPost]
+        public string Index(Board bor)
+        {
+            return "No : " + bor.No +"Title : "+bor.Title+ "Content : "+bor.Content+
+                "Author : "+ bor.Author +"Date : " + bor.Date;
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+index
+
+@model Board
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <form method ="post" action="/">
+    No :  <input asp-for="No" class="form-control" value="001"/>
+    Title : <input asp-for="Title" class="form-control" value="SM" />
+    Content : <input asp-for="Content" class="form-control" value="AA" />
+    Author : <input asp-for="Author" class="form-control" value="AA" />
+    Date : <input asp-for="Date" class="form-control" />    
+    <input type="submit" value="Submit" class="btn btn-outline-primary" />    
+    
+    </form>
+
+
+</div>
