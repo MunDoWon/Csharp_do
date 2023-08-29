@@ -1,0 +1,46 @@
+ [HttpPost]
+ public IActionResult Index(Student std)
+ {
+     return View();
+
+index
+
+@model Student
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <div class="row">
+        <div class="col-sm-4">
+            <form method="post" asp-controller="Home" asp-action="Index">
+                <input asp-for="Name" class="form-control" placeholder="이름을 넣어주세요"/>
+                <span asp-validation-for="Name"></span>
+                <br />
+                <input type="submit" value="Submit" class="btn btn-outline-success" />
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+models
+
+using System.ComponentModel.DataAnnotations;
+
+namespace ValidationAttribute01.Models
+{
+    public class Student
+    {
+        //[Required]
+        //[Required(ErrorMessage ="이름을 작성해주세요.")]
+        [StringLength(15,MinimumLength =2,ErrorMessage ="이름은 두자 이상 작성하세요")]
+        public string Name { get; set; }
+    }
+}
