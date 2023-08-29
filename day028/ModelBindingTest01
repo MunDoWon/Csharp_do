@@ -1,0 +1,63 @@
+using Microsoft.AspNetCore.Mvc;
+using ModelBindingTest01.Models;
+using System.Diagnostics;
+
+namespace ModelBindingTest01.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
+        public string Index(Student st)
+        {
+            return "Id : "+ st.Id + "Name : " + st.Name + "HP : "+ st.HP;
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+index
+
+@model Student
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <form method="post" action="/">
+        ID : <input asp-for="Id" class="form-control" value="001" />
+        <br />
+        이름 : <input asp-for="Name" class="form-control" value="홍길동" />
+        <br />
+        전화번호 : <input asp-for="HP" class="form-control" value="010-1111-1111"/>
+        <br />
+        <input type="submit" value="Submit" class="btn btn-outline-primary" />
+    </form>
+
+</div>
