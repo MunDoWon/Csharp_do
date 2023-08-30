@@ -1,0 +1,74 @@
+using DariyAppQuiz.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+
+namespace DariyAppQuiz.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly DiaryDbContext _diaryDb;
+        public HomeController(DiaryDbContext diaryDb)
+        {
+            _diaryDb= diaryDb;
+        }
+
+        public IActionResult Index()
+        {
+            var diaryDate = _diaryDb.Diary.ToList();
+            return View(diaryDate);
+        }
+        [HttpPost]
+        public IActionResult Result()
+        {
+            Diary diary = new Diary
+            {
+                No = 1,
+                Title = "Sample Title",
+                Content = "Sample Content",
+                Date = DateTime.Now
+            };
+            return View(diary);
+        }
+        public IActionResult DiaryDetail(int No)
+        {
+            var diary = _diaryDb.Diary.FirstOrDefault(d => d.No == No);
+            if (diary == null)
+            {
+                return NotFound();
+            }
+
+            return View(diary);
+        }
+
+        // GET: 삽입화면
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: 삽입기능
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("No,Title,Content,Date")] Diary diary)
+        {
+            if (ModelState.IsValid)
+            {
+                _diaryDb.Add(diary);
+                await _diaryDb.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(diary);
+        }
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
