@@ -1,0 +1,15 @@
+@model Diary
+@{
+    ViewData["Title"] = "DiaryDetail";
+}
+
+<h1>일기 내용</h1>
+<br />
+<div>
+    <h2>@Model.Title</h2>
+    <p>@Model.Content</p>
+    <p>작성일: @Model.Date.ToString("yyyy-MM-dd HH:mm:ss")</p>
+</div>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">목록으로 돌아가기</a>
+
