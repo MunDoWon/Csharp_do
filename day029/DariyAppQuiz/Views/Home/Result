@@ -1,0 +1,12 @@
+@model Diary
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h1>Diary Content</h1>
+<div>
+    <h2>@Model.Title</h2>
+    <p>@Model.Content</p>
+    <p>Date: @Model.Date.ToString("yyyy-MM-dd HH:mm:ss")</p>
+</div>
+
