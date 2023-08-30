@@ -1,0 +1,83 @@
+
+@{
+    ViewData["Title"] = "Test2";
+}
+
+<h1>Test2</h1>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    $(document).ready(function () {
+        $('*').css('color', 'blue');
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('h2').css('color', '#000000');
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('h2#temp').css('color', 'yellow');    //id는 #
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('h2.item').css('color', 'red');       //class는 .
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('tr:odd').css('background', '#A5A5A5')     //odd 홀수
+        $('tr:even').css('background', '#cccccc')    //even 짝수
+        $('tr:first').css('background', '#000000').css('color', 'white')      //first 처음
+        $('tr:last').css('background', 'red').css('color', 'white')      //last 마지막
+
+    });
+</script>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>NAme</th>
+        <th>Age</th>
+        <th>Hp</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>홍길동</td>
+        <td>20</td>
+        <td>010-1111-1111</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>이순신</td>
+        <td>40</td>
+        <td>010-2222-2222</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>강감찬</td>
+        <td>50</td>
+        <td>010-3333-3333</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>홍길동</td>
+        <td>20</td>
+        <td>010-1111-1111</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>이순신</td>
+        <td>40</td>
+        <td>010-2222-2222</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>강감찬</td>
+        <td>50</td>
+        <td>010-3333-3333</td>
+    </tr>
+</table>
