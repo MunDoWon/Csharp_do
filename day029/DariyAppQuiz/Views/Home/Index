@@ -1,0 +1,33 @@
+@model List<Diary>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>일기 목록</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>제목</th>
+            <th>작성일</th>
+            <th>내용 보기</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var diary in Model)
+        {
+            <tr>
+                <td>@diary.No</td>
+                <td>@diary.Title</td>
+                <td>@diary.Date.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>
+                    <a asp-controller="Home" asp-action="DiaryDetail" 
+                    asp-route-No="@diary.No" class="btn btn-primary">
+                        내용 보기
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
