@@ -1,0 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+
+namespace DariyAppQuiz.Models
+{
+    public class DiaryDbContext : DbContext
+    {
+        public DiaryDbContext(DbContextOptions options) : base(options)
+        {
+        }
+        public DbSet<Diary> Diary { get; set; }
+       
+    }
+}
